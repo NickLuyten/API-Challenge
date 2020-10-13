@@ -26,6 +26,9 @@ while titel != "S":
     for result in json_data["results"]:
         resultaat.append([result["popularity"], result["id"], result["title"], result["release_date"]])
     #met behulp van tabulate worden de resultaten afgeprint in een tabel.
-    print(tabulate(resultaat, headers=["populariteit", "id", "titel", "release datum"]))
+    if resultaat == []:
+        print('geen films gevonden met deze naam')
+    else:
+        print(tabulate(resultaat, headers=["populariteit", "id", "titel", "release datum"]))
 
 
